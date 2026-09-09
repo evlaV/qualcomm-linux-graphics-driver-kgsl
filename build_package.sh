@@ -31,18 +31,20 @@ aarch64-linux-gnu-gcc -DVK_USE_PLATFORM_WAYLAND_KHR -fvisibility=hidden -Wall ws
 
 patchelf --set-rpath $TARGETLIBDIR libgsl.so
 patchelf --set-rpath $TARGETLIBDIR libcutils.so.0
-patchelf --set-rpath $TARGETLIBDIR libbase.so.0
+#patchelf --set-rpath $TARGETLIBDIR libbase.so.0
 patchelf --set-rpath $TARGETLIBDIR libadreno_utils.so
 cp -v *.so libcutils.so.0 $LIBDIR/
 
 cp -v VkLayer_WSI_*.json $VULKANDIR/implicit_layer.d/
-cp -v adreno_icd.json $VULKANDIR/icd.d/
+cp -v qcom_adreno_icd.json $VULKANDIR/icd.d/
 
-pushd install
-tar -cf ../install.tar *
-popd
-gzip -f install.tar
-ls -al install.tar.gz
+if [[ "0" == "1" ]]; then
+  pushd install
+  tar -cf ../install.tar *
+  popd
+  gzip -f install.tar
+  ls -al install.tar.gz
 
-#tar xf install.tar.gz -C /
+  #tar xf install.tar.gz -C /
+fi
 

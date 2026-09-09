@@ -8,7 +8,7 @@ add "ln -s /dev/dri/renderD128 /dev/kgsl-3d0" to run on boot to create /dev/kgsl
 env vars:
 
 to use adreno blob:
-VK_ICD_FILENAMES=/usr/share/vulkan/adreno_icd.json
+VK_ICD_FILENAMES=/usr/share/vulkan/qcom_adreno_icd.json
 
 to use xcb/x11 WSI:
 VK_INSTANCE_LAYERS=VK_LAYER_WSI_xcb
