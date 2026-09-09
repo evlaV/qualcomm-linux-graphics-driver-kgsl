@@ -1,0 +1,17 @@
+{
+    "file_format_version" : "1.0.0",
+    "layer" : {
+        "name": "VK_LAYER_WSI_wayland",
+        "type": "GLOBAL",
+        "library_path": "/usr/lib/adreno/wsi_wayland.so",
+        "api_version": "1.3.211",
+        "implementation_version": "1",
+        "description": "VK_LAYER_WSI_wayland",
+        "enable_environment": {
+              "ENABLE_VULKAN_ADRENO_WAYLAND_LAYER_ENABLE": "1"
+        },
+        "disable_environment": {
+              "DISABLE_VULKAN_ADRENO_WAYLAND_LAYER_ENABLE": "1"
+        }
+    }
+}
